@@ -34,6 +34,7 @@ body{
     width:calc((100% - 40px) / 3);
     background-color: white;
     padding:20px;
+    box-shadow: 5px 5px 5px #666; /* effetto ombra */
 }
 
 .card-img{
@@ -79,6 +80,7 @@ body{
 .card:hover {
   transform: rotate(30deg); /* Ruota l'elemento di 30 gradi al passaggio del mouse */
   z-index:1000;  /* avendo z-index maggiore non finisce dietro altri elementi */
+  box-shadow: 10px 10px 5px #666;
 }
 
 /* sezione responsive */
