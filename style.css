@@ -18,7 +18,6 @@ h1{
 
 .gallery{
     background-image:url("img/cork.png");
-    /* position:relative; */
 }
 
 .container{
@@ -81,7 +80,7 @@ h1{
 }
 
 .card:hover {
-  transform: rotate(10deg); /* Ruota l'elemento di 30 gradi al passaggio del mouse */
+  transform: rotate(10deg); /* Ruota l'elemento di 10 gradi al passaggio del mouse */
   z-index:1000;  /* avendo z-index maggiore non finisce dietro altri elementi */
   box-shadow: 10px 10px 5px #666;
   cursor:pointer;
@@ -95,7 +94,6 @@ h1{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -60%);
-    height:500px;
     width:500px;
     margin-top:20px;
     z-index:10000;
@@ -116,14 +114,12 @@ h1{
     margin-bottom:30px;
 }
 
-.oscura{
-    filter: brightness(40%);
-    z-index: 20000;
+.bottone:hover{
+    cursor:pointer;
 }
 
-.schiarisci{
-    filter: brightness(100%);
-    z-index: 30000;
+.oscura{
+    filter: brightness(40%);
 }
 
 /* sezione responsive */
@@ -139,5 +135,9 @@ h1{
     
     .card {
         width: 100%;
+    }
+
+    .overlay{
+        width:100%;
     }
 }
