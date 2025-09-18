@@ -2,7 +2,8 @@ const cardContainer = document.querySelector(".container");
 const overlayCard = document.querySelector(".overlay");
 const chiudiOverlay = document.querySelector(".bottone");
 const overlayImage = document.querySelector(".card-overlay");
-const pagina = document.querySelector("body");
+const titolo = document.querySelector("header");
+const galleria = document.querySelector(".gallery");
 
 const apiPictures = "https://lanciweb.github.io/demo/api/pictures/";
 
@@ -14,13 +15,15 @@ function createNewCard(){
                 const result = risposta.data;
                 for (i=0; i<result.length; i++){
                     const {id, title, date, url} = result[i];
+                    const titolo = title.toUpperCase();
+                    console.log(titolo);
                     cards +=` 
                         <div class="card">
                             <div class="card-img">
                                <img src=${url} alt=${title}>
                             </div>
                             <div class="card-content">
-                                <span>${title}</span>
+                                <span>${titolo}</span>
                                 <span>${date}</span>
                             </div>
                             <div class="pin">
@@ -53,9 +56,9 @@ function createNewCard(){
                         
                         overlayImage.innerHTML = overlay;
                         
-                        // pagina.classList.add("oscura");
+                        titolo.classList.add("oscura");
+                        galleria.classList.add("oscura");
                         
-                        // // overlayCard.classList.add("schiarisci");
 
                     })
                 });
@@ -64,7 +67,9 @@ function createNewCard(){
                     overlayCard.classList.remove("d-block");
                     overlayCard.classList.add("d-none");
 
-                    pagina.classList.remove("oscura");
+                    
+                    titolo.classList.remove("oscura");
+                    galleria.classList.remove("oscura");
                 })
 
             })

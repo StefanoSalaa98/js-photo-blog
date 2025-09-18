@@ -118,10 +118,12 @@ h1{
 
 .oscura{
     filter: brightness(40%);
+    z-index: 20000;
 }
 
 .schiarisci{
     filter: brightness(100%);
+    z-index: 30000;
 }
 
 /* sezione responsive */
