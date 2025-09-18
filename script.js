@@ -1,4 +1,9 @@
 const cardContainer = document.querySelector(".container");
+const overlayCard = document.querySelector(".overlay");
+const chiudiOverlay = document.querySelector(".bottone");
+const overlayImage = document.querySelector(".card-overlay");
+const pagina = document.querySelector("body");
+
 const apiPictures = "https://lanciweb.github.io/demo/api/pictures/";
 
 function createNewCard(){
@@ -26,6 +31,42 @@ function createNewCard(){
                 }
 
                 cardContainer.innerHTML += cards;
+
+                const elencoItems = document.querySelectorAll(".card");
+                // console.log(elencoItems);
+
+                
+                elencoItems.forEach(cardItem => {
+                    cardItem.addEventListener("click", () => {
+                        let overlay = "";
+
+                        overlayCard.classList.remove("d-none");
+                        overlayCard.classList.add("d-block");
+                        
+                        const contenitoreImg = cardItem.querySelector (".card-img img");
+
+                        overlay +=` 
+                        <div class="card-img card-overlay">
+                            <img id="overlay-immagine" src="${contenitoreImg.src}" alt="Immagine-in-overlay">
+                        </div>
+                        `;  
+                        
+                        overlayImage.innerHTML = overlay;
+                        
+                        // pagina.classList.add("oscura");
+                        
+                        // // overlayCard.classList.add("schiarisci");
+
+                    })
+                });
+
+                chiudiOverlay.addEventListener("click", () => {
+                    overlayCard.classList.remove("d-block");
+                    overlayCard.classList.add("d-none");
+
+                    pagina.classList.remove("oscura");
+                })
+
             })
             .catch(error => {
                 // codice da eseguire in caso di errore
@@ -35,3 +76,4 @@ function createNewCard(){
 }
 
 createNewCard();
+

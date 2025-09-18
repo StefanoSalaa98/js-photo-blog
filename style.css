@@ -16,8 +16,9 @@ h1{
     font-size:40px;
 }
 
-body{
+.gallery{
     background-image:url("img/cork.png");
+    /* position:relative; */
 }
 
 .container{
@@ -25,8 +26,8 @@ body{
     flex-wrap: wrap;
     gap:25px 20px;
     width:70%;
-    margin-top:50px;
-    margin-bottom:20px;
+    padding-top:50px;
+    padding-bottom:20px;
 }
 
 .card {
@@ -73,9 +74,10 @@ body{
 /* effetto rotazione */
 
 .card {
-  transition: transform 0.5s ease-in-out; /* Assicura una transizione fluida della rotazione */
-  transition: box-shadow 0.5s ease-in-out; /* Assicura una transizione fluida dell'aumento dell'ombra */
-  z-index:100;
+    /* Assicura una transizione fluida della rotazione */ 
+    /* Assicura una transizione fluida dell'aumento dell'ombra */
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out; 
+    z-index:100;
 }
 
 .card:hover {
@@ -83,6 +85,43 @@ body{
   z-index:1000;  /* avendo z-index maggiore non finisce dietro altri elementi */
   box-shadow: 10px 10px 5px #666;
   cursor:pointer;
+}
+
+/* sezione overlay */
+
+.overlay{
+    margin: 0 auto;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    height:500px;
+    width:500px;
+    margin-top:20px;
+    z-index:10000;
+    text-align:center; /* centra il bottone */
+    filter: brightness(100%);
+}
+
+.d-none{
+    display:none;
+}
+
+.d-block{
+    display:block;
+}
+
+.bottone{
+    margin-top:10px;
+    margin-bottom:30px;
+}
+
+.oscura{
+    filter: brightness(40%);
+}
+
+.schiarisci{
+    filter: brightness(100%);
 }
 
 /* sezione responsive */
