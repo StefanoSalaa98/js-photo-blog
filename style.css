@@ -73,12 +73,13 @@ body{
 /* effetto rotazione */
 
 .card {
-  transition: transform 0.5s ease-in-out; /* Assicura una transizione fluida */
+  transition: transform 0.5s ease-in-out; /* Assicura una transizione fluida della rotazione */
+  transition: box-shadow 0.5s ease-in-out; /* Assicura una transizione fluida dell'aumento dell'ombra */
   z-index:100;
 }
 
 .card:hover {
-  transform: rotate(30deg); /* Ruota l'elemento di 30 gradi al passaggio del mouse */
+  transform: rotate(10deg); /* Ruota l'elemento di 30 gradi al passaggio del mouse */
   z-index:1000;  /* avendo z-index maggiore non finisce dietro altri elementi */
   box-shadow: 10px 10px 5px #666;
   cursor:pointer;
